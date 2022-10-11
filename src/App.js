@@ -56,7 +56,7 @@ function App() {
   } else {
     return(
     <p>Sijaintisi:{latitude},{longtitude}
-    <weather latitude={latitude}, longitude={longtitude} />
+    <weather latitude={latitude} longitude={longtitude} />
     </p>
     
     
