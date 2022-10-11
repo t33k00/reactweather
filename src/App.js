@@ -6,6 +6,7 @@ import Weather from './Weather';
 function App() {
   const [latitude, setLatitude] = useState(0)
   const [longtitude, setLongtitude] = useState(0)
+  const [isloading, setisloading] = useState(false)
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -13,6 +14,7 @@ function App() {
         console.log(position)
         setLatitude(position.coords.latitude)
         setLongtitude(position.coords.longitude)
+        isloading = longtitude+latitude
 
       }, (error) => {
         console.log(error)
@@ -22,7 +24,9 @@ function App() {
       alert("Selain ei tue paikannusta!")
     }
   }, [])
-
+  if (isloading!=0){
+    return <p>ladataan sijaintia...</p>
+  } else {
     return (
       <p>
         Sijaintisi:{latitude},{longtitude}
@@ -32,6 +36,6 @@ function App() {
 
     )
   }
-
+}
 
 export default App;

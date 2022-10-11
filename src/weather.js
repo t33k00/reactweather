@@ -11,7 +11,7 @@ export default function Weather({latitude,longitude}) {
   const [speed, setspeed] = useState(0)
   const [direction, setdirection] = useState(0)
   const [description, setdescription] = useState(0)
-  const [icon, seticon] = useState('')
+  const [icon, setIcon] = useState('')
 
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Weather({latitude,longitude}) {
       setspeed(response.data.wind.speed);
       setdirection(response.data.wind.deg);
       setdescription(response.data.weather[0].description);
-      seticon(ICON_URL+response.data.weather[0].icon+'@2x.png');
+      setIcon(ICON_URL+response.data.weather[0].icon+'@2x.png');
       console.log(ICON_URL+response.data.weather[0].icon+'@2x.png')
     }).catch(error=>{
       alert(error);
