@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import weather from './weather';
+import Weather from './Weather';
 
 function App() {
   const [latitude, setLatitude] = useState(0)
@@ -26,7 +26,7 @@ function App() {
     return (
       <p>
         Sijaintisi:{latitude},{longtitude}
-        <weather latitude = {latitude} longitude={longtitude} />
+        <Weather latitude = {latitude} longitude={longtitude} />
       </p>
 
 
